@@ -12,8 +12,8 @@ int countDifPointsForOnePair(float **points, int n, float x1, float y1, float x2
 
     //(y2-y1)*(x-x1)-(y-y1)*(x2-x1)<0
     double x,y;
-    int countPointPlus;
-    int countPointMinus;
+    int countPointPlus=0;
+    int countPointMinus=0;
     for(int i=0;i<n;i++){
         x=points[0][i];
         y=points[1][i];
@@ -29,7 +29,7 @@ int countDifPointsForOnePair(float **points, int n, float x1, float y1, float x2
 }
 
 
-int* findDifCountPoints(float **points, int n, int *index1, int* index2){
+int* findDifCountPoints(float **points, int n, int * &index1, int* &index2){
 /*
 перебор всевозможных пар точек, построение прямой на основе выбранных 2 точек,
 подсчет точек в каждой полуплоскости (для каждой точки массива определение полуплоскости,
